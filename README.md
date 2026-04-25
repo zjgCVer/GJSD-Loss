@@ -1,6 +1,9 @@
 <div align="center">
   <h1>GJSD Loss for Oriented Object Detection in Remote Sensing Images:<br>Symmetric and Scale-Invariant Gaussian Regression</h1>
   <p>
+    <a href="README_zh-CN.md">简体中文</a> | <b>English</b>
+  </p>
+  <p>
     <b>Official implementation of GJSD Loss based on MMRotate</b><br>
     Repository status: code and training configs are provided; paper/citation information will be updated after publication.
   </p>
@@ -11,7 +14,7 @@
 
 ## Abstract
 
-Gaussian-based bounding box regression provides a unified probabilistic formulation for oriented object detection in remote sensing images. Its effectiveness, however, largely depends on the metric used to compare the predicted and target Gaussian distributions. This project implements **Geometric Jensen--Shannon Divergence (GJSD) Loss**, a closed-form, symmetric, and scale-invariant Gaussian regression loss for oriented bounding box regression. By introducing a normalized geometric mixture in the precision-matrix domain, GJSD jointly measures center offsets, scale variations, and orientation errors while remaining compatible with existing MMRotate detectors.
+Gaussian-based bounding box regression provides a unified probabilistic formulation for oriented object detection in remote sensing images. Its effectiveness, however, largely depends on the metric used to compare the predicted and target Gaussian distributions. This project implements **Geometric Jensen–Shannon Divergence (GJSD) Loss**, a closed-form, symmetric, and scale-invariant Gaussian regression loss for oriented bounding box regression. By introducing a normalized geometric mixture in the precision-matrix domain, GJSD jointly measures center offsets, scale variations, and orientation errors while remaining compatible with existing MMRotate detectors.
 
 ---
 
@@ -72,7 +75,7 @@ GJSD-Loss/
 | --- | --- |
 | `mmrotate/models/losses/gaussian_dist_loss_v1.py` | Implementation of Gaussian distance losses, including `gjsd_loss` and `GDLoss_v1` / `GDLoss_v2`. |
 | `configs/gjsd/roi-trans-r50_fpn_gjsd_1x_dota_le90_ms.py` | RoI Transformer + GJSD config for DOTA-v1.0. |
-| `configs/gjsd/s2anet_r50_fpn_gjsd_1x_dota_le135_ms.py` | S$^2$A-Net + GJSD config for DOTA-v1.0. |
+| `configs/gjsd/s2anet_r50_fpn_gjsd_1x_dota_le135_ms.py` | S<sup>2</sup>A-Net + GJSD config for DOTA-v1.0. |
 | `docs/fig1.svg` | Motivation and construction diagram. |
 | `docs/fig2.svg` | Qualitative detection visualization. |
 
@@ -130,7 +133,7 @@ For DOTA submission-format testing, edit the `outfile_prefix` in the correspondi
 python tools/train.py configs/gjsd/roi-trans-r50_fpn_gjsd_1x_dota_le90_ms.py
 ```
 
-### S$^2$A-Net + GJSD
+### S<sup>2</sup>A-Net + GJSD
 
 ```bash
 python tools/train.py configs/gjsd/s2anet_r50_fpn_gjsd_1x_dota_le135_ms.py
@@ -145,7 +148,7 @@ python tools/test.py configs/gjsd/roi-trans-r50_fpn_gjsd_1x_dota_le90_ms.py \
     work_dirs/roi-trans-r50_fpn_gjsd_1x_dota_le90_ms/latest.pth
 ```
 
-For S$^2$A-Net, replace the config and checkpoint paths accordingly.
+For S<sup>2</sup>A-Net, replace the config and checkpoint paths accordingly.
 
 ---
 
@@ -155,10 +158,10 @@ The project focuses on controlled loss replacement. Under the same detector arch
 
 | Dataset | Detector | Metric | Result |
 | --- | --- | --- | --- |
-| DOTA-v1.0 | S$^2$A-Net + GJSD | mAP | 79.66 |
-| DOTA-v1.0 | S$^2$A-Net + GJSD | AP$_{75}$ | 58.47 |
+| DOTA-v1.0 | S<sup>2</sup>A-Net + GJSD | mAP | 79.66 |
+| DOTA-v1.0 | S<sup>2</sup>A-Net + GJSD | AP<sub>75</sub> | 58.47 |
 | DOTA-v1.0 | RoI Transformer + GJSD | mAP | 80.56 |
-| DOTA-v1.0 | RoI Transformer + GJSD | AP$_{75}$ | 56.23 |
+| DOTA-v1.0 | RoI Transformer + GJSD | AP<sub>75</sub> | 56.23 |
 | DIOR-R | RoI Transformer + GJSD | mAP | 66.02 |
 
 These numbers are intended to document the experimental setting reported in the manuscript. Reproduced results may vary slightly with hardware, software versions, data preprocessing, and random seeds.
@@ -167,7 +170,7 @@ These numbers are intended to document the experimental setting reported in the 
 
 ## Runtime Note
 
-GJSD introduces Cholesky factorization and linear-solve operations only in the regression loss during training. Since oriented boxes are represented by 2D Gaussians, these operations are performed on small $2\times2$ positive definite matrices and only for positive samples. The loss introduces no additional learnable parameters or inference-time branches.
+GJSD introduces Cholesky factorization and linear-solve operations only in the regression loss during training. Since oriented boxes are represented by 2D Gaussians, these operations are performed on small 2 × 2 positive definite matrices and only for positive samples. The loss introduces no additional learnable parameters or inference-time branches.
 
 ---
 
@@ -175,7 +178,7 @@ GJSD introduces Cholesky factorization and linear-solve operations only in the r
 
 - [x] GJSD loss implementation
 - [x] RoI Transformer + GJSD config
-- [x] S$^2$A-Net + GJSD config
+- [x] S<sup>2</sup>A-Net + GJSD config
 - [x] Motivation and qualitative-result figures
 - [ ] Pretrained checkpoints
 - [ ] Paper citation
