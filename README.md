@@ -1,11 +1,11 @@
 <div align="center">
-  <h1>GJSD Loss for Oriented Object Detection in Remote Sensing Images</h1>
-  <h3>Symmetric and Scale-Invariant Gaussian Regression</h3>
+  <h1>GJSD Loss for Oriented Object Detection in Remote Sensing Images:<br>Symmetric and Scale-Invariant Gaussian Regression</h1>
   <p>
     <b>Official implementation of GJSD Loss based on MMRotate</b><br>
     Repository status: code and training configs are provided; paper/citation information will be updated after publication.
   </p>
 </div>
+
 
 ---
 
@@ -58,8 +58,8 @@ GJSD-Loss/
 │       └── losses/
 │           └── gaussian_dist_loss_v1.py
 ├── docs/
-│   ├── fig1.png
-│   └── fig3.png
+│   ├── fig1.svg
+│   └── fig2.svg
 ├── tools/
 │   ├── train.py
 │   └── test.py
@@ -73,8 +73,8 @@ GJSD-Loss/
 | `mmrotate/models/losses/gaussian_dist_loss_v1.py` | Implementation of Gaussian distance losses, including `gjsd_loss` and `GDLoss_v1` / `GDLoss_v2`. |
 | `configs/gjsd/roi-trans-r50_fpn_gjsd_1x_dota_le90_ms.py` | RoI Transformer + GJSD config for DOTA-v1.0. |
 | `configs/gjsd/s2anet_r50_fpn_gjsd_1x_dota_le135_ms.py` | S$^2$A-Net + GJSD config for DOTA-v1.0. |
-| `docs/fig1.png` | Motivation and construction diagram. |
-| `docs/fig3.png` | Qualitative detection visualization. |
+| `docs/fig1.svg` | Motivation and construction diagram. |
+| `docs/fig2.svg` | Qualitative detection visualization. |
 
 ---
 
