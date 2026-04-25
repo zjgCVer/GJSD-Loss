@@ -5,7 +5,7 @@
   </p>
   <p>
     <b>Official implementation of GJSD Loss based on MMRotate</b><br>
-    Repository status: code and training configs are provided; paper/citation information will be updated after publication.
+    Repository status: code and training configs are provided; paper citation information will be updated after publication.
   </p>
 </div>
 
@@ -180,10 +180,9 @@ GJSD introduces Cholesky factorization and linear-solve operations only in the r
 - [x] RoI Transformer + GJSD config
 - [x] S<sup>2</sup>A-Net + GJSD config
 - [x] Motivation and qualitative-result figures
-- [ ] Pretrained checkpoints
 - [ ] Paper citation
 
-Pretrained checkpoints and citation information are not included at this stage and will be updated after the paper is formally released.
+Paper citation information is not included at this stage and will be updated after the paper is formally released.
 
 ---
 
